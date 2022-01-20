@@ -2,6 +2,10 @@ import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import './App.css';
 
+import Admin from './components/admin/Admin';
+import Home from './components/home/Home';
+import Movies from './components/movies/Movies';
+
 function App() {
   return (
     <Router>
@@ -41,14 +45,5 @@ function App() {
   );
 }
 
-function Home(){
-  return <h1>Home</h1>
-}
-function Movies(){
-  return <h1>Movies</h1>
-}
-function Admin(){
-  return <h1>Admin</h1>
-}
 
 export default App;
