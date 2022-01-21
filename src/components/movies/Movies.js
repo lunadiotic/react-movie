@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import './Movies.css'
+
 const Movies = () => {
     const [movies, setMovies] = useState([])
 
@@ -34,7 +36,7 @@ const Movies = () => {
                                 <rect width="100%" height="100%" fill="#55595c" />
                             </svg>
                             <div className="card-body">
-                                <Link className="h3" to={`/movies/${movie.id}`}>{movie.title}</Link>
+                                <Link className="h3 movie-title" to={`/movies/${movie.id}`}>{movie.title}</Link>
                                 <p className="card-text">
                                     2022
                                 </p>
