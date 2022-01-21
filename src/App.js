@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 
 import './App.css';
 
@@ -34,6 +34,7 @@ function App() {
           </div>
           <div className="col-md-10">
             <Routes>
+              <Route path="/movies/:id" element={<MoviesDetail/>} />
               <Route path="/movies" element={<Movies/>} />
               <Route path="/admin" element={<Admin/>} />
               <Route path="/" element={<Home/>} />
@@ -45,5 +46,10 @@ function App() {
   );
 }
 
+
+function MoviesDetail() {
+  let { id } = useParams()
+  return <h1>Movide ID {id}</h1>
+}
 
 export default App;
