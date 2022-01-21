@@ -10,7 +10,7 @@ const Movies = () => {
             {id: 2, title: 'Sing 2'},
             {id: 3, title: 'Frozen'},
         ])
-    })
+    }, [])
 
     return (
         <>
