@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, useParams, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 
 import './App.css';
 
@@ -6,6 +6,7 @@ import Admin from './components/admin/Admin';
 import Home from './components/home/Home';
 import Movies from './components/movies/Movies';
 import Categories from './components/categories/Categories';
+import MovieDetail from './components/movies/MovieDetail';
 
 function App() {
   return (
@@ -38,8 +39,10 @@ function App() {
           </div>
           <div className="col-md-10">
             <Routes>
-              <Route path="/movies/:id" element={<MoviesDetail/>} />
-              <Route path="/movies" element={<Movies/>} />
+              <Route path="/movies">
+                <Route path="/movies/:id" element={<MovieDetail/>} />
+                <Route index={true} element={<Movies/>} />
+              </Route>
               <Route exact path="/categories">
                 <Route path="drama" element={<Categories title="Drama"/>} />
                 <Route path="comedy" element={<Categories title="Comedy"/>} />
@@ -55,11 +58,6 @@ function App() {
   );
 }
 
-
-function MoviesDetail() {
-  let { id } = useParams()
-  return <h1>Movide ID {id}</h1>
-}
 
 function CategoryPage() {
   let { pathname } = useLocation()
