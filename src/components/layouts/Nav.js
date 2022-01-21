@@ -40,6 +40,11 @@ const Nav = () => {
                     </ul>
                     <ul className="navbar-nav mb-2 mb-md-0">
                         <li className="nav-item">
+                            <Link className="nav-link btn btn-outline-success" aria-current="page" to="/admin">
+                                Admin
+                            </Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link btn btn-outline-primary" aria-current="page" to="/">
                                 Login
                             </Link>
